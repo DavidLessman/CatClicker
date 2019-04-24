@@ -3,6 +3,7 @@ let siteScore = 0;
 let scoreDisplay = document.getElementById("score");
 let scoreBoard = document.getElementById("scoreBoard");
 let Board = document.getElementById("PlayField"); 
+let catMenu = document.getElementById('catMenu');
 
 let catList = [
     {
@@ -72,9 +73,34 @@ function displayCat(i) {
     
 }
 
-//for (var i = 0; i < catList.length; i++) {
-//    displayCat(i);
-//}
+function displayMenu(i) {
+    var para = document.createElement("li");
+    para.classList.add("menuItem");
+    para.innerHTML = `<span>${catList[i].name}</span>  Clicks: <span id ="clicks">${catList[i].score}</span>`;
+    catMenu.appendChild(para);
+    var clickCounter = document.getElementById('clicks');
+    var chooseMe = document.getElementsByClassName('menuItem');
+
+
+
+    para.addEventListener('click', (function (evt) {
+        return function () {
+            console.log(`You clicked on ${catList[i].name}`);
+            displayCat(i);
+            }
+
+            //siteScore = catList[0].score + catList[1].score;
+
+            scoreDisplay.innerText = siteScore;
+            clickCounter.innerText = catList[i].score;
+
+        
+    })(i));
+}
+
+for (var i = 0; i < catList.length; i++) {
+    displayMenu(i);
+}
 
 displayCat(4);
 
