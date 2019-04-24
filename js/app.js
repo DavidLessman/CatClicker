@@ -8,13 +8,39 @@ let catList = [
     {
         name: "Phillip",
         img: "http://placekitten.com/200/300",
-        score: 25
+        score: 0
     },
     {
         name: "Kelly",
         img: "http://placekitten.com/g/200/300",
-        score: 12
-    }];
+        score: 0
+    },
+    {
+        name: "Charles",
+        img: "http://placekitten.com/200/300",
+        score: 0
+    },
+    {
+        name: "Fenando",
+        img: "http://placekitten.com/g/200/300",
+        score: 0
+    },
+    {
+        name: "Jose",
+        img: "http://placekitten.com/200/300",
+        score: 0
+    },
+    {
+        name: "Bryan",
+        img: "http://placekitten.com/g/200/300",
+        score: 0
+    },
+    {
+        name: "Wilma",
+        img: "http://placekitten.com/200/300",
+        score: 0
+    },
+];
 
 function generateCat(i) {
     var para = document.createElement("div");
@@ -26,9 +52,6 @@ function generateCat(i) {
 for (var i = 0; i < catList.length; i++) {
     generateCat(i);
 }
-
-
-//generateCat(1);
 
 
 function resetGame() {
@@ -46,7 +69,7 @@ function respondToClick(evt) {
         console.log(`You clicked on ${catList[1].name}`);
         catList[1].score += 1;
     } else {
-        console.log("Please click on a cat!")
+        console.log("Please click on the cat!")
     };
 
     siteScore = catList[0].score + catList[1].score;
