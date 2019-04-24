@@ -18,9 +18,10 @@ Currently working on menu for cats. Many cats (7 currently) stored in an array. 
 ~~less simple now. about to see where part 3 takes me.~~
 Starting on part 3. I need a list of cats (by name), he said dropdown list verbally but it just says a list in the specs.
 
-about to create menu section. Currently able to select cats, and scores stored individually.
+~~about to create menu section. Currently able to select cats, and scores stored individually.
+Total score not currently functioning.~~
 
-Total score not currently functioning.
+Menu and scores all working now. Included the scores in the menu so you can see how many times each cat has been clicked.
 
 going to work through the improvements suggested during this assignment. 
 

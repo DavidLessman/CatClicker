@@ -58,7 +58,7 @@ function displayCat(i) {
         return function () {
             console.log(`You clicked on ${catList[i].name}`);
             catList[i].score += 1;
-
+            siteScore = 0;
             for (var s = 0; s < catList.length; s++) {
                 siteScore += catList[s].score;
             }
@@ -67,6 +67,7 @@ function displayCat(i) {
 
             scoreDisplay.innerText = siteScore;
             clickCounter.innerText = catList[i].score;
+            menuScoresArray[i].innerText = catList[i].score;
             
         };
     })(i) );
@@ -76,10 +77,8 @@ function displayCat(i) {
 function displayMenu(i) {
     var para = document.createElement("li");
     para.classList.add("menuItem");
-    para.innerHTML = `<span>${catList[i].name}</span>  Clicks: <span id ="clicks">${catList[i].score}</span>`;
+    para.innerHTML = `<span>${catList[i].name}</span>  Clicks: <span name ="menuClick">${catList[i].score}</span>`;
     catMenu.appendChild(para);
-    var clickCounter = document.getElementById('clicks');
-    var chooseMe = document.getElementsByClassName('menuItem');
 
 
 
@@ -91,7 +90,7 @@ function displayMenu(i) {
 
             //siteScore = catList[0].score + catList[1].score;
 
-            scoreDisplay.innerText = siteScore;
+            //scoreDisplay.innerText = siteScore;
             clickCounter.innerText = catList[i].score;
 
         
@@ -101,6 +100,7 @@ function displayMenu(i) {
 for (var i = 0; i < catList.length; i++) {
     displayMenu(i);
 }
+var menuScoresArray = document.getElementsByName('menuClick');
 
 displayCat(4);
 
