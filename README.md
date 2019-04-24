@@ -13,7 +13,8 @@ Two cats displaying now. Each has a name and it's own counter. Total score at th
 ## plans
 
 ~~currently pretty simple.~~
-less simple now. about to see where part 3 takes me.
+~~less simple now. about to see where part 3 takes me.~~
+Starting on part 3. I need a list of cats (by name), he said dropdown list verbally but it just says a list in the specs.
 
 going to work through the improvements suggested during this assignment. 
 
@@ -25,4 +26,4 @@ if not addressed:
 
 ## contributions
 
-placekitten.com providing the image of the cat that's being used.
+placekitten.com providing the images of the cat that's being used.
