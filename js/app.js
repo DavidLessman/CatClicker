@@ -19,7 +19,7 @@ let catList = [
 function generateCat(i) {
     var para = document.createElement("div");
     para.classList.add("cat");
-    para.innerHTML = `<h3>Name: <span id="name">${catList[i].name}</span>  Clicks: <span id ="clicks">${catList[i].score}</span > <h3><img src="${catList[i].img}">`;
+    para.innerHTML = `<h3>Name: <span id="name">${catList[i].name}</span>  Clicks: <span id ="clicks${i}">${catList[i].score}</span > <h3><img class="catPic${i}" src="${catList[i].img}">`;
     document.getElementById("PlayField").appendChild(para);
 }
 
@@ -31,16 +31,30 @@ for (var i = 0; i < catList.length; i++) {
 //generateCat(1);
 
 
-//function resetGame() {
-//    let catsHTML = new Cat;
-//    Board.innerHTML = catsHTML.join('');
-//}
-
-function respondToClick(evt) {
-    siteScore = catList[0].score + catList[1].score;
-    scoreDisplay.innerText = siteScore;
+function resetGame() {
+    siteScore = 0;
+    for (var i = 0; i < catList.length; i++) {
+        catList[i].score = 0;
+    };
 }
 
-//resetGame();
+function respondToClick(evt) {
+    if (evt.target.classList == `catPic0`) {
+        console.log(`You clicked on ${catList[0].name}`);
+        catList[0].score += 1;
+    } else if (evt.target.classList == "catPic1") {
+        console.log(`You clicked on ${catList[1].name}`);
+        catList[1].score += 1;
+    } else {
+        console.log("Please click on a cat!")
+    };
+
+    siteScore = catList[0].score + catList[1].score;
+    scoreDisplay.innerText = siteScore;
+    document.getElementById(`clicks${0}`).innerText = catList[0].score;
+    document.getElementById(`clicks${1}`).innerText = catList[1].score;
+}
+
+resetGame();
 
 Board.addEventListener('click', respondToClick);
