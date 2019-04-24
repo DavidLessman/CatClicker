@@ -5,7 +5,7 @@ optional project during Udacity Frontend Dev Course.
 
 after loading the index.html file, you simply click on the cat and your score will increase.
 
-### Part 2 Cat Clicker Duo
+#### Part 2 Cat Clicker Duo
 so now I need to have 2 cats, each with a name and number of clicks.
 
 ## plans
